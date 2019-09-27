@@ -29,4 +29,7 @@ Route::get('/greet/{name?}', function () {
     return view('greet', [
         'name' => $name,
     ]);
+Route::get('/form', function () {
+    return view('form');
+    ]);
 });
