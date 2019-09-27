@@ -15,18 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/greet', function () {
-    $request = request();
+// Route::get('/greet', function () {
+//     $request = request();
 
-    $name = $request->query('name', 'Stranger');
-    return "Hello, {$name}!";
-});
+//     $name = $request->query('name', 'Stranger');
+//     return "Hello, {$name}!";
+// });
 
-Route::get('/greet/{name?}', function () {
-    $request = request();
+Route::get('/greet')->uses('AppController@greet');
+Route::post('/greet')->uses('AppController@greet');
 
-    $name = $request->route('name', 'Stranger');
-    return view('greet', [
-        'name' => $name,
-    ]);
-});
+// Route::get('/greet/{name?}', function () {
+//     $request = request();
+
+//     $name = $request->route('name', 'Stranger');
+//     return view('greet', [
+//         'name' => $name,
+//     ]);
+// });
