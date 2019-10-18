@@ -25,11 +25,8 @@ Route::get('/', function () {
 Route::get('/greet')->uses('AppController@greet');
 Route::post('/greet')->uses('AppController@greet');
 
-// Route::get('/greet/{name?}', function () {
-//     $request = request();
+Route::resource('/people', PersonController::class);
 
-//     $name = $request->route('name', 'Stranger');
-//     return view('greet', [
-//         'name' => $name,
-//     ]);
-// });
+Route::get('/form', function () {
+    return view('form');
+});

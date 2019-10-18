@@ -22,7 +22,7 @@
             <input type="text" id="database" name="database">
         </div>
         <div>
-            <label for="propert_id">Property ID:</label>
+            <label for="property_id">Property ID:</label>
             <input type="text" id="property_id" name="property_id">
         </div>
         <div>
@@ -30,6 +30,6 @@
             <input type="text" id="endpoint" name="endpoint">
         </div>
     </form>
-    
+
 </body>
 </html>

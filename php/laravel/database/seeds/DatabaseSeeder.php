@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use App\Models;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +13,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $people = collect([
+            'patrik' => Models\Person::create([
+                'name' => 'Patrik',
+                'email' => 'pvormittag@engrain.com',
+                'gender' => 'male',
+            ]),
+            'courtney' => Models\Person::create([
+                'name' => 'Courtney',
+                'email' => 'chall@engrain.com',
+            ]),
+        ]);
+
+        $more_people = factory(Models\Person::class, 100)->create();
+
+        $more_people = factory(Models\Person::class, 50)->create([
+            'gender' => 'female',
+        ]);
     }
 }
