@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Models;
+use App\Model;
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,5 +30,15 @@ class DatabaseSeeder extends Seeder
         $more_people = factory(Models\Person::class, 50)->create([
             'gender' => 'female',
         ]);
+        $form = collect([
+            'a_company' => Models\Form::create([
+                'username' => 'chall',
+                'password' => 'something_secret',
+                'server' => 'a_co',
+                'database' => 'a_co',
+            ]),
+        ]);
+
+        $more_people = factory(Models\Form::class, 100)->create();
     }
 }
