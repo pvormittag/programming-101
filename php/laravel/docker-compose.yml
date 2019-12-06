@@ -8,7 +8,6 @@ services:
       - ./:/var/www/html
     ports:
       - "80:80"
-
   database:
     image: mysql:5.7.17
     ports:

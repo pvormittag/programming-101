@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
         $more_people = factory(Models\Person::class, 50)->create([
             'gender' => 'female',
         ]);
+        
         $form = collect([
             'a_company' => Models\Form::create([
                 'username' => 'chall',
